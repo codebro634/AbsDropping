@@ -1,0 +1,17 @@
+2              # numIntersections
+5              # numCells
+1              # number_of_input_cells
+0 0.7          # cell=0 is an input cell with input rate=0.7
+1              # number_of_exit_cells
+4              # cell=4 is a perimeter exit cell
+4              # number_of_flows_cell_to_cell
+0 1            # flows from cell 0 -> cell 1
+1 2            # flows from cell 1 -> cell 2
+2 3            # flows from cell 2 -> cell 3
+3 4            # flows from cell 3 -> cell 4
+1              # number_of_flows_cell_to_intersection_NS
+0 0            # cell 0 flows into intersection 0 (NS approach)
+1              # number_of_flows_cell_to_intersection_EW
+1 1            # cell 1 flows into intersection 1 (EW approach)
+1             # number of init cells
+2         # cell 2 is initially occupied

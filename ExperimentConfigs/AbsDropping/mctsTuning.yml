@@ -1,0 +1,289 @@
+seed: 42
+episodes: 2000
+executable_dry_run: ./cmake-build-debug/BenchmarkGamesDebug
+executable: ./cmake-build-debug/BenchmarkGamesRelease
+
+agents:
+
+  - mcts_highvar:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.5,1,2,4,8,12,16,24,32]
+        dag: [1]
+        dynamic_exp_factor: [1]
+
+  - mcts_sa:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [5]
+
+  - mcts_gol:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [5]
+
+  - mcts_aa:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [20]
+
+  - mcts_tam:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [10]
+
+  - mcts_wf:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [10]
+
+  - mcts_recon:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [50]
+
+  - mcts_eo:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [20]
+
+  - mcts_man:
+      agent_type: mcts
+      agent_args:
+        iterations: [ 1000,2000 ]
+        expfacs: [ 0.125,0.25,0.5,1,2,4,8,16,32,64,128,256 ]
+        dag: [ 1 ]
+        dynamic_exp_factor: [ 1 ]
+        num_rollouts: [ 10 ]
+        rollout_length: [ 5 ]
+
+
+  - mcts_navigation:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [20]
+
+  - mcts_rt:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [20]
+
+  - mcts_sw:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [10]
+
+  - mcts_st:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [5]
+
+  - mcts_tr:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [5]
+
+  - mcts_trt:
+      agent_type: mcts
+      agent_args:
+        iterations: [1000]
+        expfacs: [0.125,0.25,0.5,1,2,4,8,16,32,64,128,256]
+        dag: [1]
+        dynamic_exp_factor: [1]
+        num_rollouts: [10]
+        rollout_length: [20]
+
+models:
+
+  - sa:
+      model_type : sa
+      model_args:
+        map: ./resources/SysAdminTopologies/4_Anand.txt
+
+  - gol:
+      model_type: gol
+      model_args:
+        map: ./resources/GameOfLifeMaps/3_Anand.txt
+
+  - aa:
+      model_type: aa
+      model_args:
+        map: ./resources/AcademicAdvisingCourses/2_Anand.txt
+        dense_rewards: 0
+
+  - tam:
+      model_type: tam
+      model_args:
+        map: ./resources/TamariskMaps/2_IPPC.txt
+
+  - recon:
+      model_type: recon
+      model_args:
+        map: ./resources/CooperativeReconSetups/3_IPPC.txt
+
+  - eo:
+      model_type: eo
+      model_args:
+        map: ./resources/EarthObservationMaps/1_IPPC.txt
+
+  - man:
+      model_type: man
+      model_args:
+        map: ./resources/ManufacturerSetups/3_IPPC.txt
+
+  - navigation:
+      model_type: navigation
+      model_args:
+        map: ./resources/NavigationMaps/3_Anand.txt
+
+  - rt:
+      model_type: rt
+      model_args:
+        map: ./resources/Racetracks/ring-2.track
+
+  - sw:
+      model_type: sw
+      model_args:
+        size: 15
+
+  - st:
+      model_type: st
+      model_args:
+        map: ./resources/SkillsTeachingSkills/5_IPPC.txt
+
+  - tr:
+      model_type: tr
+      model_args:
+        map: ./resources/TrafficModels/1_IPPC.txt
+
+  - trt:
+      model_type: trt
+      model_args:
+        map: ./resources/TriangleTireworlds/5_IPPC.txt
+
+pairings:
+  
+#    - pair:
+#        - agents: [mcts_sa]
+#        - models: [sa]
+#
+#    - pair:
+#        - agents: [mcts_gol]
+#        - models: [gol]
+#
+#    - pair:
+#        - agents: [mcts_aa]
+#        - models: [aa]
+#  #
+#    - pair:
+#        - agents: [mcts_recon]
+#        - models: [recon]
+#
+#    - pair:
+#        - agents: [mcts_eo]
+#        - models: [eo]
+#
+#    - pair:
+#        - agents: [mcts_man]
+#        - models: [man]
+#  #
+#    - pair:
+#        - agents: [mcts_navigation]
+#        - models: [navigation]
+#
+#    - pair:
+#        - agents: [mcts_rt]
+#        - models: [rt]
+#
+#    - pair:
+#        - agents: [mcts_sw]
+#        - models: [sw]
+#  #
+#    - pair:
+#        - agents: [mcts_st]
+#        - models: [st]
+#
+#    - pair:
+#        - agents: [mcts_tr]
+#        - models: [tr]
+#
+#    - pair:
+#        - agents: [mcts_trt]
+#        - models: [trt]
+#
+#    - pair:
+#        - agents: [mcts_tam]
+#        - models: [tam]
+#
+#    - pair:
+#        - agents: [mcts_highvar]
+#        - models: [sa,gol,aa,recon,eo,man,navigation,rt,sw,st,tr,trt,tam]
+
+      - pair:
+          - agents: [mcts_highvar]
+          - models: [tr]
+
+      - pair:
+          - agents: [mcts_tr]
+          - models: [tr]

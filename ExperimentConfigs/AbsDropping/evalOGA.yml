@@ -1,0 +1,589 @@
+seed: 42
+episodes: 2000
+executable_dry_run: ./cmake-build-debug/BenchmarkGamesDebug
+executable: ./cmake-build-debug/BenchmarkGamesRelease
+
+agents:
+
+
+  - oga_eps_sa_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_gol_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_aa_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 8 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_tam_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1 ]
+        K: [ 1 ]
+        eps_a: [0, 0.5, 1.0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_wf_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,5,10]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_recon_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0, 0.5, 1.0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_eo_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 64 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_man_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,10,20]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_navigation_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_rt_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 0.25 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_sw_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 0.5 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_st_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 0.5 ]
+        K: [ 1 ]
+        eps_a: [0,2,3]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_tr_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1.0 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+  - oga_eps_trt_highvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [1]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [-1]
+
+
+
+
+
+
+
+
+
+
+
+  - oga_eps_sa_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [5]
+
+  - oga_eps_gol_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [5]
+
+  - oga_eps_aa_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 8 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [20]
+
+  - oga_eps_tam_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1 ]
+        K: [ 1 ]
+        eps_a: [0, 0.5, 1.0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [10]
+
+  - oga_eps_wf_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,5,10]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [10]
+
+  - oga_eps_recon_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0, 0.5, 1.0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [50]
+
+  - oga_eps_eo_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 64 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [20]
+
+  - oga_eps_man_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,10,20]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [5]
+
+  - oga_eps_navigation_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [20]
+
+  - oga_eps_rt_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 0.25 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [20]
+
+  - oga_eps_sw_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 0.5 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [10]
+
+  - oga_eps_st_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 0.5 ]
+        K: [ 1 ]
+        eps_a: [0,2,3]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [5]
+
+  - oga_eps_tr_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1.0 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [5]
+
+  - oga_eps_trt_lowvar:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [-1]
+        drop_at_visits: [10000000]
+        num_rollouts: [10]
+        drop_check_point: [ 1.1 ]
+        drop_threshold: [ 10000000000 ]
+        rollout_length: [20]
+
+models:
+
+  - sa:
+      model_type : sa
+      model_args:
+        map: ./resources/SysAdminTopologies/4_Anand.txt
+
+  - gol:
+      model_type: gol
+      model_args:
+        map: ./resources/GameOfLifeMaps/3_Anand.txt
+
+  - aa:
+      model_type: aa
+      model_args:
+        map: ./resources/AcademicAdvisingCourses/2_Anand.txt
+        dense_rewards: 0
+
+  - tam:
+      model_type: tam
+      model_args:
+        map: ./resources/TamariskMaps/2_IPPC.txt
+
+  - recon:
+      model_type: recon
+      model_args:
+        map: ./resources/CooperativeReconSetups/3_IPPC.txt
+
+  - eo:
+      model_type: eo
+      model_args:
+        map: ./resources/EarthObservationMaps/1_IPPC.txt
+
+  - man:
+      model_type: man
+      model_args:
+        map: ./resources/ManufacturerSetups/3_IPPC.txt
+
+  - navigation:
+      model_type: navigation
+      model_args:
+        map: ./resources/NavigationMaps/3_Anand.txt
+
+  - rt:
+      model_type: rt
+      model_args:
+        map: ./resources/Racetracks/ring-2.track
+
+  - sw:
+      model_type: sw
+      model_args:
+        size: 15
+
+  - st:
+      model_type: st
+      model_args:
+        map: ./resources/SkillsTeachingSkills/5_IPPC.txt
+
+  - tr:
+      model_type: tr
+      model_args:
+        map: ./resources/TrafficModels/1_IPPC.txt
+
+  - trt:
+      model_type: trt
+      model_args:
+        map: ./resources/TriangleTireworlds/5_IPPC.txt
+
+pairings:
+
+  - pair:
+      - agents: [oga_eps_sa_highvar, oga_eps_sa_lowvar]
+      - models: [sa]
+
+  - pair:
+      - agents: [oga_eps_gol_highvar, oga_eps_gol_lowvar]
+      - models: [gol]
+
+  - pair:
+      - agents: [oga_eps_aa_highvar, oga_eps_aa_lowvar]
+      - models: [aa]
+
+  - pair:
+      - agents: [oga_eps_recon_highvar, oga_eps_recon_lowvar]
+      - models: [recon]
+
+  - pair:
+      - agents: [oga_eps_eo_highvar, oga_eps_eo_lowvar]
+      - models: [eo]
+
+  - pair:
+      - agents: [oga_eps_man_highvar, oga_eps_man_lowvar]
+      - models: [man]
+  #
+  - pair:
+      - agents: [oga_eps_navigation_highvar, oga_eps_navigation_lowvar]
+      - models: [navigation]
+
+  - pair:
+      - agents: [oga_eps_rt_highvar, oga_eps_rt_lowvar]
+      - models: [rt]
+
+  - pair:
+      - agents: [oga_eps_sw_highvar, oga_eps_sw_lowvar]
+      - models: [sw]
+  #
+  - pair:
+      - agents: [oga_eps_st_highvar, oga_eps_st_lowvar]
+      - models: [st]
+
+  - pair:
+      - agents: [oga_eps_tr_highvar, oga_eps_tr_lowvar]
+      - models: [tr]
+
+  - pair:
+      - agents: [oga_eps_trt_highvar, oga_eps_trt_lowvar]
+      - models: [trt]
+
+  - pair:
+      - agents: [oga_eps_tam_highvar, oga_eps_tam_lowvar]
+      - models: [tam]
+
+

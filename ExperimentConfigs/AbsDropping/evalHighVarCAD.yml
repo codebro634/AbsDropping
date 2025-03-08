@@ -1,0 +1,326 @@
+seed: 42
+episodes: 2000
+executable_dry_run: ./cmake-build-debug/BenchmarkGamesDebug
+executable: ./cmake-build-debug/BenchmarkGamesRelease
+
+agents:
+
+  - oga_eps_sa:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_gol:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_aa:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_tam:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1 ]
+        K: [ 1 ]
+        eps_a: [0, 0.5, 1.0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_wf:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,5,10]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_recon:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0, 0.5, 1.0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_eo:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_man:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,10,20]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_navigation:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 8 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_rt:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_sw:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0,1,2,3,4]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_st:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 4 ]
+        K: [ 1 ]
+        eps_a: [0,2,3]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_tr:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 1.0 ]
+        K: [ 1 ]
+        eps_a: [0,1,2]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+  - oga_eps_trt:
+      agent_type: oga
+      agent_args:
+        iterations: [1000]
+        expfac: [ 2 ]
+        K: [ 1 ]
+        eps_a: [0]
+        eps_t: [0,0.4,1.0,2.0]
+        group_partially_expanded_states: [0,1]
+        drop_confidence: [0.25,0.5,0.75,0.9]
+        drop_at_visits: [10000000]
+        drop_check_point: [1.1]
+        drop_threshold: [ 10000000000 ]
+
+models:
+
+  - sa:
+      model_type : sa
+      model_args:
+        map: ./resources/SysAdminTopologies/4_Anand.txt
+
+  - gol:
+      model_type: gol
+      model_args:
+        map: ./resources/GameOfLifeMaps/3_Anand.txt
+
+  - aa:
+      model_type: aa
+      model_args:
+        map: ./resources/AcademicAdvisingCourses/2_Anand.txt
+        dense_rewards: 0
+
+  - tam:
+      model_type: tam
+      model_args:
+        map: ./resources/TamariskMaps/2_IPPC.txt
+
+  - recon:
+      model_type: recon
+      model_args:
+        map: ./resources/CooperativeReconSetups/3_IPPC.txt
+
+  - eo:
+      model_type: eo
+      model_args:
+        map: ./resources/EarthObservationMaps/1_IPPC.txt
+
+  - man:
+      model_type: man
+      model_args:
+        map: ./resources/ManufacturerSetups/3_IPPC.txt
+
+  - navigation:
+      model_type: navigation
+      model_args:
+        map: ./resources/NavigationMaps/3_Anand.txt
+
+  - rt:
+      model_type: rt
+      model_args:
+        map: ./resources/Racetracks/ring-2.track
+
+  - sw:
+      model_type: sw
+      model_args:
+        size: 15
+
+  - st:
+      model_type: st
+      model_args:
+        map: ./resources/SkillsTeachingSkills/5_IPPC.txt
+
+  - tr:
+      model_type: tr
+      model_args:
+        map: ./resources/TrafficModels/1_IPPC.txt
+
+  - trt:
+      model_type: trt
+      model_args:
+        map: ./resources/TriangleTireworlds/5_IPPC.txt
+
+pairings:
+
+  - pair:
+      - agents: [oga_eps_sa]
+      - models: [sa]
+
+  - pair:
+      - agents: [oga_eps_gol]
+      - models: [gol]
+
+  - pair:
+      - agents: [oga_eps_aa]
+      - models: [aa]
+
+  - pair:
+      - agents: [oga_eps_recon]
+      - models: [recon]
+
+  - pair:
+      - agents: [oga_eps_eo]
+      - models: [eo]
+
+  - pair:
+      - agents: [oga_eps_man]
+      - models: [man]
+
+  - pair:
+      - agents: [oga_eps_navigation]
+      - models: [navigation]
+
+  - pair:
+      - agents: [oga_eps_rt]
+      - models: [rt]
+
+  - pair:
+      - agents: [oga_eps_sw]
+      - models: [sw]
+
+  - pair:
+      - agents: [oga_eps_st]
+      - models: [st]
+
+  - pair:
+      - agents: [oga_eps_tr]
+      - models: [tr]
+
+  - pair:
+      - agents: [oga_eps_trt]
+      - models: [trt]
+
+  - pair:
+      - agents: [oga_eps_tam]
+      - models: [tam]
+
+
