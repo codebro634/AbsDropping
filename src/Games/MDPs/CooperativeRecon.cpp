@@ -275,7 +275,7 @@ namespace RECON
     }
 
     std::pair<std::vector<double>, double>
-    ReconModel::applyAction_(Gamestate* state, int action, std::mt19937& rng)
+    ReconModel::applyAction_(Gamestate* state, int action, std::mt19937& rng,std::vector<std::pair<int,int>>* decision_outcomes)
     {
         auto* st = dynamic_cast<ReconState*>(state);
 
@@ -283,6 +283,7 @@ namespace RECON
         st->pictureTaken = std::vector<bool>(objectPositions_.size(), false);
 
         double reward = 0.0;
+        size_t decision_point = 0;
 
         // If the action is "use camera on object i", we check the domain's formula
         bool usedCamera, usedLife, usedWater;
@@ -407,9 +408,11 @@ namespace RECON
                 std::uniform_real_distribution<double> dist(0.0, 1.0);
                 double r = dist(rng);
                 bool newDamaged = (r < p);
-                if(newDamaged){
+                if( (decision_outcomes == nullptr && newDamaged) || (decision_outcomes != nullptr && (p==1 || (p != 0 &&  0 == getDecisionPoint(decision_point, 0, 1, decision_outcomes))))) {
                     st->damaged[t] = true;
-                }
+                    outcomeProb *= p;
+                }else
+                    outcomeProb *= (1.0 - p);
             }
         }
 
@@ -421,10 +424,11 @@ namespace RECON
                 std::uniform_real_distribution<double> dist(0.0, 1.0);
                 double r = dist(rng);
                 bool detect = (r < p);
-                if(detect){
+                if( (decision_outcomes == nullptr && detect) || (decision_outcomes != nullptr && (p==1 || (p != 0 && 0 == getDecisionPoint(decision_point, 0, 1, decision_outcomes))))) {
                     st->waterDetected[usedObj] = true;
-                }
-                outcomeProb *= (detect ? p : (1.0 - p));
+                    outcomeProb *= p;
+                }else
+                    outcomeProb *= 1.0 - p;
             }
         }
 
@@ -439,10 +443,11 @@ namespace RECON
                 std::uniform_real_distribution<double> dist(0.0, 1.0);
                 double r = dist(rng);
                 bool detect = (r < p);
-                if(detect){
+                if( (decision_outcomes == nullptr && detect) || (decision_outcomes != nullptr && (p==1 || (p != 0 &&  0 == getDecisionPoint(decision_point, 0, 1, decision_outcomes))))) {
                     st->lifeDetected[usedObj] = true;
-                }
-                outcomeProb *= (detect ? p : (1.0 - p));
+                    outcomeProb *= p;
+                }else
+                    outcomeProb *= 1.0 - p;
             }
         }
 
