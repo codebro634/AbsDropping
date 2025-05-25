@@ -1,2 +1,0 @@
-Games:
-    -Evt edge cases behandeln, wenn spieler keinen gültigen zug hat (z.b. in schach) -> man sollte immer eine do-nothing aktion angeboten bekommen
