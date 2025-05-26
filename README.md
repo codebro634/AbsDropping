@@ -7,6 +7,7 @@ dropping methods" which contains the code to reproduce the experiments and the r
 
 ## Citing the project
 
+```
 @inproceedings{abs_dropping_schmoecker,
   author    = {Robin Schmöcker, Lennart Kampmann, Alexander Dockhorn},
   title     = {Time-critical and confidence-based abstraction dropping methods},
@@ -16,6 +17,7 @@ dropping methods" which contains the code to reproduce the experiments and the r
   month     = {August},
   url       = {To be published.}
 }
+```
 
 ## Abstract
 
