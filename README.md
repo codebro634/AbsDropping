@@ -5,6 +5,18 @@
 This is the repository accompanying the paper "Time-critical and confidence-based abstraction
 dropping methods" which contains the code to reproduce the experiments and the results of the paper.
 
+## Citing the project
+
+@inproceedings{abs_dropping_schmoecker,
+  author    = {Robin Schmöcker, Lennart Kampmann, Alexander Dockhorn},
+  title     = {Time-critical and confidence-based abstraction dropping methods},
+  booktitle = {Proceedings of the IEEE Conference on Games (COG)},
+  year      = {2025},
+  address   = {Lisbon, Portugal},
+  month     = {August},
+  url       = {To be published.}
+}
+
 ## Abstract
 
 One paradigm of Monte Carlo Tree Search (MCTS)
