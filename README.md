@@ -8,15 +8,15 @@ dropping methods" which contains the code to reproduce the experiments and the r
 ## Citing the project
 
 ```
-@inproceedings{abs_dropping_schmoecker,
-  author    = {Robin Schmöcker, Lennart Kampmann, Alexander Dockhorn},
-  title     = {Time-critical and confidence-based abstraction dropping methods},
-  booktitle = {Proceedings of the IEEE Conference on Games (COG)},
-  year      = {2025},
-  address   = {Lisbon, Portugal},
-  month     = {August},
-  url       = {To be published.}
-}
+@inproceedings{schmoedockkampdropping,
+  author={Schmöcker, Robin and Kampmann, Lennart and Dockhorn, Alexander},
+  booktitle={2025 IEEE Conference on Games (CoG)}, 
+  title={{Time-Critical and Confidence-Based Abstraction Dropping Methods}}, 
+  year={2025},
+  volume={},
+  number={},
+  keywords={Degradation;Monte Carlo methods;Decision making;Games;Approximation error;Approximation algorithms;Time factors;Artificial intelligence;Convergence;Abstraction dropping;Abstractions;MCTS Sequential Decision-making;Artificial Intelligence},
+  doi={10.1109/CoG64752.2025.11114261}}
 ```
 
 ## Abstract
